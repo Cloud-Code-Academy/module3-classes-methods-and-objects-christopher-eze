@@ -135,22 +135,24 @@ public with sharing class ClassesObjectsMethods {
         // The list of scientists' names
         List<String> scientistNames = new List<String>{'Tim Berners-Lee', 'Alan Turing', 'Grace Hopper', 'Donald Knuth', 'Guido van Rossum', 'Ken Thompson', 'Stephen Hawking'};
 
+        List<String> scientistsWithG = new List<String>();
+
         // The variable to store the concatenated string
         String result = '';
         // Loop through the list of scientists' names
         for (String scientist : scientistNames) {
             // If the name doesn't contain the letter 'G', skip this iteration
-            if (!scientist.contains('g')) {
-                continue;
-            }
-            // Add the name to the result string, followed by a comma
-            result += scientist + ',';
-        // Remove the last comma from the result string
-        if (result.endsWith(',')) {
-            result = result.substring(0, result.length() - 1);
+            if (scientist.toLowerCase().contains('g')) {
+                scientistsWithG.add(scientist);
             }
         }
-        return result; // Replace null with the variable you used to store the result
+    
+            // Add the name to the result string, followed by a comma
+        
+        // Remove the last comma from the result string
+        return String.join(scientistsWithG, ',');
+
+       // return null; // Replace null with the variable you used to store the result
     
     }
 
@@ -311,19 +313,18 @@ public with sharing class ClassesObjectsMethods {
         List<Book> bookList = new List<Book>();
         
         // Update the title and author of myBook1
-        for(integer i = 0; i < bookList.size(); i++ ) {
         myBook1.title = 'Harry Potter and the Chamber of Secrets';
         myBook1.author = 'J.K. Rowling';
         myBook1.pages = 352;
-    }
+    
         // Update the pages for myBook1 to 352
         // Create a new Book object with title "A Brief History of Time" and author "Stephen Hawking"
-        Book myBook2 = new Book('A Brief History of Time', 'Stephen Hawking');
+        Book Book2 = new Book ('A Brief History of Time', 'Stephen Hawking');
         // Update the pages for A Brief History of Time to 256
-        myBook2.pages = 256;
+        Book2.Pages = 256;
         // Add the book to the list
         bookList.add(myBook1);
-        bookList.add(myBook2);
+        bookList.add(Book2);
         return bookList; // Replace null with the variable you used to store the result      
     }
 
