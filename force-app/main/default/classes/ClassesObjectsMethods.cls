@@ -135,20 +135,18 @@ public with sharing class ClassesObjectsMethods {
         // The list of scientists' names
         List<String> scientistNames = new List<String>{'Tim Berners-Lee', 'Alan Turing', 'Grace Hopper', 'Donald Knuth', 'Guido van Rossum', 'Ken Thompson', 'Stephen Hawking'};
 
+        //List of scientits name with G
         List<String> scientistsWithG = new List<String>();
 
         // The variable to store the concatenated string
-        String result = '';
+
         // Loop through the list of scientists' names
         for (String scientist : scientistNames) {
-            // If the name doesn't contain the letter 'G', skip this iteration
             if (scientist.toLowerCase().contains('g')) {
                 scientistsWithG.add(scientist);
             }
         }
-    
-            // Add the name to the result string, followed by a comma
-        
+        // Add the name to the result string, followed by a comma
         // Remove the last comma from the result string
         return String.join(scientistsWithG, ',');
 
